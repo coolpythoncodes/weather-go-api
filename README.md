@@ -6,7 +6,7 @@ This is Go application that fetches weather information from the OpenWeatherMap 
 
 - [Features](#features)
 - [Environment Variables](#environment-variables)
-- [Installation](#installation) 
+- [Installation](#installation)
 - [Usage](#usage)
 - [Endpoints](#endpoints)
 
@@ -46,11 +46,19 @@ cd weather-go-api
 ## Usage
 
 To run the Weather App,
+
 ```bash
 go run main.go
 ```
 
+For Docker fans
+
+```bash
+docker compose up --build
+```
+
 ## Endpoints
+
 The Weather App provides the following endpoints:
 
 GET /weather/:city: Fetches weather data for the specified city.
@@ -65,19 +73,18 @@ Response:
 
 ```json
 {
-  "error": false,
-  "data": {
-    "name": "London",
-    "weather": [
-      {
-        "main": "Clouds",
-        "description": "scattered clouds"
-      }
-    ],
-    "main": {
-      "temp": 12.34
-    }
-  }
+	"error": false,
+	"data": {
+		"name": "London",
+		"weather": [
+			{
+				"main": "Clouds",
+				"description": "scattered clouds"
+			}
+		],
+		"main": {
+			"temp": 12.34
+		}
+	}
 }
-
 ```
