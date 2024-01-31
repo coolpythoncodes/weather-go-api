@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -46,7 +45,6 @@ func GetWeatherDetails(c *gin.Context) {
 			"message": err.Error(),
 		})
 	}
-	fmt.Println("weatherResponseData", weatherResponseData)
 	c.JSON(http.StatusOK, gin.H{
 		"error": false,
 		"data":  weatherResponseData,

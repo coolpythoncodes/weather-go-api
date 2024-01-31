@@ -1,24 +1,13 @@
 package main
 
 import (
-	"log"
-	"os"
-
 	"github.com/coolpythoncodes/weather-api/controllers"
 	"github.com/gin-gonic/gin"
 )
 
+const Port = ":8080"
+
 func main() {
-
-	// if err := godotenv.Load(); err != nil {
-	// 	log.Fatal("Error loading .env file")
-	// }
-
-	port := os.Getenv("PORT")
-
-	if port == "" {
-		log.Fatal("PORT is not provided in the environment file. Please set a  port.")
-	}
 
 	r := gin.Default()
 
@@ -26,5 +15,5 @@ func main() {
 
 	// By default it serves on :8080 unless a
 	// PORT environment variable was defined.
-	r.Run(port)
+	r.Run(Port)
 }

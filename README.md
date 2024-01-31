@@ -20,7 +20,6 @@ This is Go application that fetches weather information from the OpenWeatherMap 
 
 The following environment variables are used in the application:
 
-- PORT: Specifies the port on which the application listens for incoming HTTP requests.
 - OPEN_WEATHER_API_KEY: API key for accessing the OpenWeatherMap API. Get your API key [here](https://home.openweathermap.org/api_keys)
 
 Ensure these variables are set before running the application.
@@ -41,11 +40,17 @@ git clone https://github.com/coolpythoncodes/weather-go-api.git
 cd weather-go-api
 ```
 
-3. Set up environment variables by creating a .env file in the root directory and adding the necessary variables (see [Environment Variables](#environment-variables)).
+3. Set up environment variables by creating a .env file in the root directory and adding the necessary variables (see [Environment Variables](#environment-variables)). Note: this is applicable to those using docker compose to build the app.
 
 ## Usage
 
-To run the Weather App,
+To run the Weather App(not applicable to people using docker compose),
+
+Set your environment variable by running the following commands on your terminal
+
+```bash
+export OPEN_WEATHER_API_KEY="insert your api key here"
+```
 
 ```bash
 go run main.go
@@ -66,7 +71,7 @@ GET /weather/:city: Fetches weather data for the specified city.
 Example:
 
 ```bash
-curl http://localhost:{YOUR_PORT}/weather/London
+curl http://localhost:8080/weather/London
 ```
 
 Response:
